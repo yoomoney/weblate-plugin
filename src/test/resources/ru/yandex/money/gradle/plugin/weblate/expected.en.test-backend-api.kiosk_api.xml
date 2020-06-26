@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <tanker>
-  <project id="yamoney">
+  <project id="test-backend-api">
     <keyset id="kiosk_api">
       <key id=".a3_counter_hint" is_plural="False">
         <context></context>

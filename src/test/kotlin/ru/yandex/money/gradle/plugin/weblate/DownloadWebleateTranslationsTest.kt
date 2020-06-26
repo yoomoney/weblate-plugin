@@ -91,13 +91,13 @@ class DownloadWebleateTranslationsTest {
         result.task(":downloadWeblateTranslations")?.outcome shouldEqual TaskOutcome.SUCCESS
 
         // проверяем результирующие файлы
-        val actualRu = testProjectDir.root.resolve("target/translate/ru/yamoney.kiosk_api.xml").readText()
-        val expectedRu = getResourceContent("expected.ru.yamoney.kiosk_api.xml")
+        val actualRu = testProjectDir.root.resolve("target/translate/ru/test-backend-api.kiosk_api.xml").readText()
+        val expectedRu = getResourceContent("expected.ru.test-backend-api.kiosk_api.xml")
 
         actualRu shouldEqual expectedRu
 
-        val actualEn = testProjectDir.root.resolve("target/translate/en/yamoney.kiosk_api.xml").readText()
-        val expectedEn = getResourceContent("expected.en.yamoney.kiosk_api.xml")
+        val actualEn = testProjectDir.root.resolve("target/translate/en/test-backend-api.kiosk_api.xml").readText()
+        val expectedEn = getResourceContent("expected.en.test-backend-api.kiosk_api.xml")
 
         actualEn shouldEqual expectedEn
     }

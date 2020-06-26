@@ -91,8 +91,7 @@ open class DownloadTranslationsTask : DefaultTask() {
         val translations = xliff.file.body.translations
 
         return TankerDocument(Project(
-            // yamoney остается по умолчанию для обратной совместимости с библиотеками, работающими с форматом tanker
-            id = "yamoney",
+            id = project,
             keySet = KeySet(
                 id = component,
                 keys = translations.map {
