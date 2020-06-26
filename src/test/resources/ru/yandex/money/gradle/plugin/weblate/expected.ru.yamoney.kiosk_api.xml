@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tanker>
+  <project id="yamoney">
+    <keyset id="kiosk_api">
+      <key id=".RUB" is_plural="False">
+        <context>Подсказка для ввода значений счетчиков</context>
+        <value language="ru" status="approved">руб.</value>
+      </key>
+      <key id=".bad_fraction" is_plural="False">
+        <context></context>
+        <value language="ru" status="approved">Нужно, чтобы эта цифра делилась на &lt;i18n:param>step&lt;/i18n:param>. Например, можно указать &lt;i18n:param>stepX2&lt;/i18n:param>, &lt;i18n:param>stepX3&lt;/i18n:param> и так далее</value>
+      </key>
+      <key id=".a3_counter_hint" is_plural="False">
+        <context></context>
+        <value language="ru" status="approved">Через точку. Например: 500.12</value>
+      </key>
+    </keyset>
+  </project>
+</tanker>

@@ -3,6 +3,7 @@ package ru.yandex.money.gradle.plugin.weblate.model.xliff
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText
 
 /**
  * Модель спецификации [xliff 1.1](http://www.oasis-open.org/committees/xliff/documents/xliff-specification.htm)
@@ -65,11 +66,26 @@ data class Translation(
     val id: String,
 
     @JacksonXmlProperty(localName = "source")
-    val source: String,
+    val source: Source,
 
     @JacksonXmlProperty(localName = "target")
-    val target: String = "",
+    val target: Target,
 
     @JacksonXmlProperty(localName = "note")
     val note: String = ""
+)
+
+data class Target(
+    @JacksonXmlProperty(localName = "state", isAttribute = true)
+    val state: String? = null,
+
+    @JacksonXmlProperty(localName = "innerText")
+    @JacksonXmlText
+    val value: String = ""
+)
+
+data class Source(
+    @JacksonXmlProperty(localName = "innerText")
+    @JacksonXmlText
+    val value: String = ""
 )

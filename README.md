@@ -1,7 +1,11 @@
 # yamoney-weblate-plugin
 
+- Официальная документация Weblate: https://docs.weblate.org/en/latest/
+
 ## Функционал
 * Выгрузка из Weblate переводов для запрошенного проекта.
+
+Weblate prod: https://weblate.yamoney.ru/
 
 ## Подключение
 
@@ -25,7 +29,7 @@ apply plugin: 'yamoney-weblate-plugin'
 ```groovy
 weblate {
     connection {
-        url = "http://ugr-vm-cms-test-magnolia.yamoney.ru"
+        url = "https://weblate.yamoney.ru/"
         token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     }
 

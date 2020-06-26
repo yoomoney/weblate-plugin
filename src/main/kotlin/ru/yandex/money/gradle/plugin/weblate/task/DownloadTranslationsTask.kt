@@ -116,10 +116,10 @@ open class DownloadTranslationsTask : DefaultTask() {
      * в качестве fallback значения берется source язык
      */
     private fun getTranslationValue(translation: Translation): String {
-        return if (translation.target.isNotBlank()) {
-            translation.target
+        return if (translation.target.value.isNotBlank()) {
+            translation.target.value
         } else {
-            translation.source
+            translation.source.value
         }
     }
 

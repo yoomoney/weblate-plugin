@@ -17,15 +17,23 @@ class XliffTest {
 
     private fun getDummyXliffDocument(): Xliff {
         return Xliff(version = "1.1",
-                file = File(
-                        sourceLanguage = "ru",
-                        targetLanguage = "ru",
-                        body = Body().apply {
-                            translations = mutableListOf(
-                                    Translation(id = ".button", source = "Мои карты", target = "Мои карты", note = "Комментарий"),
-                                    Translation(id = ".description", source = "Можно платить", target = "Можно платить")
-                            )
-                        }
-                ))
+            file = File(
+                sourceLanguage = "ru",
+                targetLanguage = "ru",
+                body = Body().apply {
+                    translations = mutableListOf(
+                        Translation(
+                            id = ".button",
+                            source = Source("Мои карты"),
+                            target = Target(value = "Мои карты"),
+                            note = "Комментарий"
+                        ),
+                        Translation(id = ".description",
+                            source = Source("Можно платить"),
+                            target = Target(value = "Можно платить")
+                        )
+                    )
+                }
+            ))
     }
 }
