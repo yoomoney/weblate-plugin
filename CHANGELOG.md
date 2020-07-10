@@ -1,5 +1,7 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* В конфигурацию плагина добавлен флаг пропуска загрузки перевода в случае ошибок weblate
+* Добавлен повтор вызова weblate в случае ошибки
 ### NEXT_VERSION_DESCRIPTION_END
 ## [1.1.0](https://bitbucket.yamoney.ru/projects/BACKEND-GRADLE-PLUGINS/repos/weblate-plugin/pull-requests/2) (03-07-2020)
 

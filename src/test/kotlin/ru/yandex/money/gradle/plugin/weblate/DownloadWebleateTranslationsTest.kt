@@ -3,6 +3,7 @@ package ru.yandex.money.gradle.plugin.weblate
 import com.github.tomakehurst.wiremock.client.WireMock.aResponse
 import com.github.tomakehurst.wiremock.client.WireMock.get
 import com.github.tomakehurst.wiremock.client.WireMock.urlPathMatching
+import org.amshove.kluent.shouldContain
 import org.amshove.kluent.shouldEqual
 import org.apache.commons.io.FilenameUtils
 import org.gradle.testkit.runner.GradleRunner
@@ -100,6 +101,56 @@ class DownloadWebleateTranslationsTest {
         val expectedEn = getResourceContent("expected.en.test-backend-api.kiosk_api.xml")
 
         actualEn shouldEqual expectedEn
+    }
+
+    @Test
+    fun `Should silently skip task if skipOnWeblateError is set`() {
+        val translationDestDir = testProjectDir.root.resolve("target/translate")
+        val fileSystemAwareDestDir = FilenameUtils
+            .separatorsToSystem(translationDestDir.canonicalPath).replace("\\", "\\\\")
+
+        val wireMockServer = WireMockServiceProvider.wireMockServer(WireMockServiceProvider
+            .buildConfig()
+            .port(InetUtils.getFreeRandomLocalPort()))
+
+        wireMockServer.stubFor(
+            get(urlPathMatching("/api/translations/test-backend-api/kiosk_api/ru/file"))
+                .willReturn(aResponse()
+                    .withStatus(502)
+                    .withHeader("Content-Type", "application/text")
+        ))
+
+        buildFile.writeText("""
+            plugins {
+                id 'yamoney-weblate-plugin'
+            }
+
+            weblate {
+                connection {
+                    url = "${wireMockServer.baseUrl()}"
+                    token = "Token iDVBWUtvcir04EYIBkLJmzvUQ8Bo1ZAAJaVhS8Xx"
+                }
+            
+                translations {
+                    weblateProject = "test-backend-api"
+                    destDir = "$fileSystemAwareDestDir"
+                    components = ["kiosk_api"]
+                    languages = ["ru", "en"]
+                    
+                    skipOnWeblateError = true
+                }
+            }
+        """.trimIndent())
+
+        val result = GradleRunner.create()
+            .withPluginClasspath()
+            .withProjectDir(testProjectDir.root)
+            .withArguments("downloadWeblateTranslations")
+            .build()
+
+        // проверяем статус gradle task
+        result.task(":downloadWeblateTranslations")?.outcome shouldEqual TaskOutcome.SUCCESS
+        result.output shouldContain "Error during download translation. Ignore due to skipOnWeblateError is true"
     }
 
     private fun getResourceContent(filename: String) = this::class.java.getResource(filename).readText()

@@ -38,6 +38,8 @@ weblate {
         destDir = "ansible/templates/config/i18n"
         components = ['payment_name', 'payment', 'payment_history', 'card']
         languages = ["ru", "en"]
+
+        skipOnWeblateError = true //пропускать загрузку в случае недоступности weblate
     }
 }
 ```
