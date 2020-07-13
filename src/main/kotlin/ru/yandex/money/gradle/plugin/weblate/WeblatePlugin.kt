@@ -54,6 +54,7 @@ class WeblatePlugin : Plugin<Project> {
             it.languages = translationsSettings.languages
             it.components = translationsSettings.components
             it.destDir = File(translationsSettings.destDir)
+            it.skipOnWeblateError = translationsSettings.skipOnWeblateError
         }
     }
 }

@@ -22,6 +22,7 @@ import ru.yandex.money.gradle.plugin.weblate.model.tanker.TankerDocument
 import ru.yandex.money.gradle.plugin.weblate.model.tanker.Value
 import ru.yandex.money.gradle.plugin.weblate.model.xliff.Translation
 import ru.yandex.money.gradle.plugin.weblate.model.xliff.Xliff
+import ru.yandex.money.gradle.plugin.weblate.retryOnException
 import java.io.File
 import java.net.URL
 
@@ -57,6 +58,9 @@ open class DownloadTranslationsTask : DefaultTask() {
     @Input
     lateinit var components: Set<String>
 
+    @Input
+    var skipOnWeblateError: Boolean = false
+
     @TaskAction
     fun loadTranslationsAsXliff() {
         log.lifecycle("Downloading weblate translations...")
@@ -66,7 +70,15 @@ open class DownloadTranslationsTask : DefaultTask() {
             destLanguageDir.mkdirs()
 
             components.forEach {
-                val xliffTranslation = downloadTranslations(lang, project, it)
+                val xliffTranslation = try {
+                    downloadTranslations(lang, project, it)
+                } catch (ex: Exception) {
+                    if (skipOnWeblateError) {
+                        log.error("Error during download translation. Ignore due to skipOnWeblateError is true", ex)
+                        return
+                    }
+                    throw ex
+                }
 
                 // для обратной совместимости в с логикой i18n-utils сохраняем в формате Яндекс.Танкер
                 val tankerDocument = mapXliffToTankerFormat(xliffTranslation, it)
@@ -134,11 +146,13 @@ open class DownloadTranslationsTask : DefaultTask() {
             }
         }.use {
             return runBlocking {
-                it.get<Xliff> {
-                    url("$weblateBaseUrl/api/translations/$project/$component/$language/file")
-                    parameter("format", "xliff")
-                    headers {
-                        append("Authorization", weblateApiToken)
+                retryOnException(3) {
+                    it.get<Xliff> {
+                        url("$weblateBaseUrl/api/translations/$project/$component/$language/file")
+                        parameter("format", "xliff")
+                        headers {
+                            append("Authorization", weblateApiToken)
+                        }
                     }
                 }
             }
