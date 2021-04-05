@@ -1,27 +1,22 @@
-# yamoney-weblate-plugin
+# weblate-plugin
 
 - Официальная документация Weblate: https://docs.weblate.org/en/latest/
 
 ## Функционал
 * Выгрузка из Weblate переводов для запрошенного проекта.
 
-Weblate prod: https://weblate.yamoney.ru/
-
 ## Подключение
 
 ```groovy
 buildscript {
     repositories {
-        maven { url 'http://nexus.yamoney.ru/repository/thirdparty/' }
-        maven { url 'http://nexus.yamoney.ru/repository/central/' }
-        maven { url 'http://nexus.yamoney.ru/repository/releases/' }
-        maven { url 'http://nexus.yamoney.ru/repository/jcenter.bintray.com/' }
+        mavenCentral()
     }
     dependencies {
-        classpath 'ru.yandex.money.gradle.plugins:yamoney-weblate-plugin:1.+'
+        classpath 'ru.yoomoney.gradle.plugins.weblate-plugin:1.+'
     }
 }
-apply plugin: 'yamoney-weblate-plugin'
+apply plugin: 'ru.yoomoney.gradle.plugins.weblate-plugin'
 ```
 
 ## Конфигурация
@@ -29,7 +24,7 @@ apply plugin: 'yamoney-weblate-plugin'
 ```groovy
 weblate {
     connection {
-        url = "https://weblate.yamoney.ru/"
+        url = "https://example.net/" // your Weblate prod.
         token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     }
 
