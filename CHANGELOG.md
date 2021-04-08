@@ -1,10 +1,10 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [1.4.0](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/1) (08-04-2021)
+
 * Внесены изменения в связи с переходом в GitHub:
-    * Переименованы пакеты
-    * Сборка переведена на travis (ранее использовался jenkins)
-    * Исключены "внутренние" зависимости
-### NEXT_VERSION_DESCRIPTION_END
+* Переименованы пакеты
+* Сборка переведена на travis (ранее использовался jenkins)
+* Исключены "внутренние" зависимости
+
 ## [1.3.0]() (12-02-2021)
 
 * Переименование kotlin-module-plugin в ru.yoomoney.gradle.plugins.kotlin-plugin
