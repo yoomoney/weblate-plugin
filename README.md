@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/yoomoney-gradle-plugins/weblate-plugin.svg?branch=master)](https://travis-ci.com/yoomoney-gradle-plugins/weblate-plugin)
+[![codecov](https://codecov.io/gh/yoomoney-gradle-plugins/weblate-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/yoomoney-gradle-plugins/weblate-plugin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # weblate-plugin
 
 - Официальная документация Weblate: https://docs.weblate.org/en/latest/
