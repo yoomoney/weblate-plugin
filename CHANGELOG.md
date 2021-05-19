@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [1.4.1](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/2) (19-05-2021)
+
 * Добавлена информация о сборке, покрытии, лицензии в README.md.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [1.4.0](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/1) (08-04-2021)
 
 * Внесены изменения в связи с переходом в GitHub:
