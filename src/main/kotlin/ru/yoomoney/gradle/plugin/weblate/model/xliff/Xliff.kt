@@ -61,18 +61,32 @@ class Body {
     }
 }
 
-data class Translation(
+class Translation {
     @JacksonXmlProperty(localName = "id", isAttribute = true)
-    val id: String,
+    var id: String = ""
 
     @JacksonXmlProperty(localName = "source")
-    val source: Source,
+    var source: Source = Source()
 
     @JacksonXmlProperty(localName = "target")
-    val target: Target,
+    var target: Target = Target()
 
     @JacksonXmlProperty(localName = "note")
-    val note: String = ""
+    @JacksonXmlElementWrapper(useWrapping = false)
+    var notes: MutableList<Note> = mutableListOf()
+        set(value) {
+            field.addAll(value)
+        }
+
+    override fun toString(): String {
+        return "Translation(id=$id, source=$source, target=$target, note=$notes)"
+    }
+}
+
+data class Note(
+    @JacksonXmlProperty(localName = "innerText")
+    @JacksonXmlText
+    val value: String = ""
 )
 
 data class Target(

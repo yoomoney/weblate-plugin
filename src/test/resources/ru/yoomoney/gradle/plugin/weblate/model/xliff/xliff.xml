@@ -10,7 +10,8 @@
             <trans-unit xml:space="preserve" id=".description">
                 <source>Можно платить</source>
                 <target>Можно платить</target>
-                <note from="developer"></note>
+                <note from="developer">Подсказка для ввода значений счетчиков</note>
+                <note from="translator">Предложение перевода</note>
             </trans-unit>
         </body>
     </file>
