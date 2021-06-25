@@ -22,17 +22,20 @@ class XliffTest {
                 targetLanguage = "ru",
                 body = Body().apply {
                     translations = mutableListOf(
-                        Translation(
-                            id = ".button",
-                            source = Source("Мои карты"),
-                            target = Target(value = "Мои карты"),
-                            note = "Комментарий"
-                        ),
-                        Translation(id = ".description",
-                            source = Source("Можно платить"),
-                            target = Target(value = "Можно платить")
-                        )
-                    )
+                        Translation().apply {
+                            id = ".button"
+                            source = Source("Мои карты")
+                            target = Target(value = "Мои карты")
+                            notes = mutableListOf(Note("Комментарий"))
+                        },
+                            Translation().apply {
+                                id = ".description"
+                                source = Source("Можно платить")
+                                target = Target(value = "Можно платить")
+                                notes = mutableListOf(Note("Подсказка для ввода значений счетчиков"),
+                                        Note("Предложение перевода"))
+                            }
+                            )
                 }
             ))
     }

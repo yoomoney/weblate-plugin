@@ -110,7 +110,7 @@ open class DownloadTranslationsTask : DefaultTask() {
                 id = component,
                 keys = translations.map {
                     Key(id = it.id,
-                        context = it.note,
+                        context = if (it.notes.isEmpty()) "" else it.notes.get(0).value,
                         // всегда false, на данный момент plural режим не поддерживаются в i18m-utils
                         plural = "False",
                         value = Value(

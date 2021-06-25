@@ -10,6 +10,7 @@
                 <source>руб.</source>
                 <target state="translated">rub.</target>
                 <note from="developer">Подсказка для ввода значений счетчиков</note>
+                <note from="translator">Предложение перевода</note>
             </trans-unit>
             <trans-unit xml:space="preserve" id=".bad_fraction">
                 <source>Нужно, чтобы эта цифра делилась на &lt;i18n:param&gt;step&lt;/i18n:param&gt;. Например, можно указать &lt;i18n:param&gt;stepX2&lt;/i18n:param&gt;, &lt;i18n:param&gt;stepX3&lt;/i18n:param&gt; и так далее</source>
