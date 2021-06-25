@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [1.4.2](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/3) (25-06-2021)
 
 * Исправлено падение DownloadTranslationsTask при содержании нескольких тегов <note>
