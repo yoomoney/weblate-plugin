@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/yoomoney/weblate-plugin.svg?branch=master)](https://travis-ci.com/yoomoney/weblate-plugin)
+[![codecov](https://codecov.io/gh/yoomoney/weblate-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/yoomoney/weblate-plugin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # weblate-plugin
