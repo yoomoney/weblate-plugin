@@ -1,15 +1,16 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* Переезд организации yoomoney-gradle-plugins -> yoomoney
 ### NEXT_VERSION_DESCRIPTION_END
-## [1.4.2](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/3) (25-06-2021)
+## [1.4.2](https://github.com/yoomoney/weblate-plugin/pull/3) (25-06-2021)
 
 * Исправлено падение DownloadTranslationsTask при содержании нескольких тегов <note>
 
-## [1.4.1](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/2) (19-05-2021)
+## [1.4.1](https://github.com/yoomoney/weblate-plugin/pull/2) (19-05-2021)
 
 * Добавлена информация о сборке, покрытии, лицензии в README.md.
 
-## [1.4.0](https://github.com/yoomoney-gradle-plugins/weblate-plugin/pull/1) (08-04-2021)
+## [1.4.0](https://github.com/yoomoney/weblate-plugin/pull/1) (08-04-2021)
 
 * Внесены изменения в связи с переходом в GitHub:
 * Переименованы пакеты
