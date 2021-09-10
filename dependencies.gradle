@@ -6,7 +6,8 @@ dependencies {
             'io.ktor:ktor-client-jackson:1.3.1',
             'io.ktor:ktor-client-apache:1.3.1',
             'com.fasterxml.jackson.module:jackson-module-kotlin:2.11.0',
-            'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.11.0'
+            'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.11.0',
+            'ru.yoomoney.gradle.plugins:artifact-release-plugin:4.0.1-feature-BACKEND-4766-SNAPSHOT'
 
     testImplementation gradleTestKit(),
             'com.github.tomakehurst:wiremock-jre8-standalone:2.25.1',
