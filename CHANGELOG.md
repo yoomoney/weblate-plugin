@@ -1,5 +1,6 @@
-### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_TYPE=PATCH
 ### NEXT_VERSION_DESCRIPTION_BEGIN
+* com.fasterxml.jackson.module:jackson-module-kotlin
 ### NEXT_VERSION_DESCRIPTION_END
 ## [1.5.1](https://github.com/yoomoney/weblate-plugin/pull/5) (27-10-2021)
 
