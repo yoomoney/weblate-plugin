@@ -1,4 +1,4 @@
-### NEXT_VERSION_TYPE=PATCH
+### NEXT_VERSION_TYPE=MINOR
 ### NEXT_VERSION_DESCRIPTION_BEGIN
 * Поднята версия зависимости jackson-module-kotlin: 2.11.0 -> 2.12.1
 * Поднята версия зависимости jackson-dataformat-xml: 2.11.0 -> 2.12.1
