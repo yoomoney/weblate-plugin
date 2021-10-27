@@ -1,7 +1,7 @@
-### NEXT_VERSION_TYPE=PATCH
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [1.5.1](https://github.com/yoomoney/weblate-plugin/pull/5) (27-10-2021)
+
 * Теперь флаг skipOnWeblateError работает и для Throwable исключений.
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [1.5.0](https://github.com/yoomoney/weblate-plugin/pull/4) (26-08-2021)
 
 * Переезд организации yoomoney-gradle-plugins -> yoomoney
