@@ -1,8 +1,8 @@
-### NEXT_VERSION_TYPE=MINOR
-### NEXT_VERSION_DESCRIPTION_BEGIN
+## [1.6.0](https://github.com/yoomoney/weblate-plugin/pull/6) (27-10-2021)
+
 * Поднята версия зависимости jackson-module-kotlin: 2.11.0 -> 2.12.1
 * Поднята версия зависимости jackson-dataformat-xml: 2.11.0 -> 2.12.1
-### NEXT_VERSION_DESCRIPTION_END
+
 ## [1.5.1](https://github.com/yoomoney/weblate-plugin/pull/5) (27-10-2021)
 
 * Теперь флаг skipOnWeblateError работает и для Throwable исключений.
