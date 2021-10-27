@@ -72,7 +72,7 @@ open class DownloadTranslationsTask : DefaultTask() {
             components.forEach {
                 val xliffTranslation = try {
                     downloadTranslations(lang, project, it)
-                } catch (ex: Exception) {
+                } catch (ex: Throwable) {
                     if (skipOnWeblateError) {
                         log.error("Error during download translation. Ignore due to skipOnWeblateError is true", ex)
                         return
