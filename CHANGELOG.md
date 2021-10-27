@@ -1,3 +1,6 @@
+### NEXT_VERSION_TYPE=MAJOR|MINOR|PATCH
+### NEXT_VERSION_DESCRIPTION_BEGIN
+### NEXT_VERSION_DESCRIPTION_END
 ## [1.6.0](https://github.com/yoomoney/weblate-plugin/pull/6) (27-10-2021)
 
 * Поднята версия зависимости jackson-module-kotlin: 2.11.0 -> 2.12.1
